@@ -1,7 +1,10 @@
 {
-  "name": "sparkybot",
-  "version": "1.0.0",
-  "description": "This is an AI very intelligent bot",
-  "main": "index.js",
-  "license": "MIT"
+	"name": "sparkybot",
+	"version": "1.0.0",
+	"description": "This is an AI very intelligent bot",
+	"main": "index.js",
+	"license": "MIT",
+	"scripts": {
+		"build": "tsc"
+	}
 }
