@@ -10,6 +10,9 @@ export function getAuth(): Record<string, string> {
 	let result: Record<string, string>
 
 	for (let line of file_lines) {
-		const split_line = line.split("")
+		const split_line = line.trim().split("=")
+		if (split_line.length) {
+			//
+		}
 	}
 }
