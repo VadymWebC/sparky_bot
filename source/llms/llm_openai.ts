@@ -3,9 +3,9 @@ import { Option } from "../types/option"
 import { LargeLanguageModel } from "./iim_interface"
 
 export class LargeLangualeModelOpenai implements LargeLanguageModel {
-	#client: Openai
+	#openai: Openai
 	constructor() {
-		this.#client = new Openai({
+		this.#openai = new Openai({
 			organization: null,
 		})
 	}
@@ -16,7 +16,7 @@ export class LargeLangualeModelOpenai implements LargeLanguageModel {
 		//
 	}
 	async generate(): Promise<Option<string>> {
-		const completion = await this.#client.chat.completions.create({
+		const completion = await this.#openai.chat.completions.create({
 			messages: [{ role: "system", content: "You are a helpful assistant." }],
 			model: "gpt-3.5-turbo",
 		})
