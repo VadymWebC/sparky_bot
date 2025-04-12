@@ -14,5 +14,6 @@ export function getAuth(): Record<string, string> {
 		if (split_line.length < 2) {
 			console.error("Could not parse line", line)
 		}
+		result[split_line[0]] = split_line.join("")
 	}
 }
