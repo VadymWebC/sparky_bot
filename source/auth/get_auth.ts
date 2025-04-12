@@ -11,8 +11,8 @@ export function getAuth(): Record<string, string> {
 
 	for (let line of file_lines) {
 		const split_line = line.trim().split("=")
-		if (split_line.length) {
-			//
+		if (split_line.length < 2) {
+			console.error("Could not parse line", line)
 		}
 	}
 }
