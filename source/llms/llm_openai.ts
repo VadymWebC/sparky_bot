@@ -2,7 +2,7 @@ import Openai from "openai"
 import { Option } from "../types/option"
 import { LargeLanguageModel } from "./iim_interface"
 
-export class LargeLangualeModelOpenai implements LargeLanguageModel {
+export class LargeLanguageModelOpenai implements LargeLanguageModel {
 	#openai: Openai
 	constructor() {
 		this.#openai = new Openai({
