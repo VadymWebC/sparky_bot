@@ -7,14 +7,14 @@ export function getAuth(): Record<string, string> {
 
 	const file_lines: string[] = file_content.split(/\r\n|\n/g)
 
-	let result: Record<string, string> = []
+	let result: Record<string, string> = {}
 
 	for (let line of file_lines) {
 		const split_line = line.trim().split("=")
 		if (split_line.length < 2) {
 			console.error("Could not parse line", line)
 		}
-		result[split_line[0]!] = split_line.join("=")
+		result[split_line[0]!] = split_line.slice(1, undefined).join("=")
 	}
 
 	return result
