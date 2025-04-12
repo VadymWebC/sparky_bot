@@ -1,5 +1,5 @@
 function main(): void {
-	console.log("test")
+	console.log("OMG IT WORKS!!!")
 }
 
 setImmediate(main)
