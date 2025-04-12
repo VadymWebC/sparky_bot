@@ -15,7 +15,7 @@ export class LargeLangualeModelOpenai implements LargeLanguageModel {
 	free(): Promise<void> {
 		//
 	}
-	generate(): Promise<Option<string>> {
+	async generate(): Promise<Option<string>> {
 		const completion = await openai.chat.completions.create({
 			messages: [{ role: "system", content: "You are a helpful assistant." }],
 			model: "gpt-3.5-turbo",
