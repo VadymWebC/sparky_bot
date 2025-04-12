@@ -9,10 +9,10 @@ export class LargeLangualeModelOpenai implements LargeLanguageModel {
 			organization: null,
 		})
 	}
-	init(): Promise<void> {
+	async init(): Promise<void> {
 		//
 	}
-	free(): Promise<void> {
+	async free(): Promise<void> {
 		//
 	}
 	async generate(): Promise<Option<string>> {
@@ -20,6 +20,9 @@ export class LargeLangualeModelOpenai implements LargeLanguageModel {
 			messages: [{ role: "system", content: "You are a helpful assistant." }],
 			model: "gpt-3.5-turbo",
 		})
-		console.log(completion.choices[0])
+		return {
+			success: true,
+			value: completion.choices[0]?.message.content!,
+		}
 	}
 }
