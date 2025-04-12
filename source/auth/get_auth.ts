@@ -7,7 +7,7 @@ export function getAuth(): Record<string, string> {
 
 	const file_lines: string[] = file_content.split(/\r\n|\n/g)
 
-	let result: Record<string, string>
+	let result: Record<string, string> = []
 
 	for (let line of file_lines) {
 		const split_line = line.trim().split("=")
@@ -16,4 +16,6 @@ export function getAuth(): Record<string, string> {
 		}
 		result[split_line[0]!] = split_line.join("=")
 	}
+
+	return result
 }
